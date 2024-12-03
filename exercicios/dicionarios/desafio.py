@@ -14,6 +14,7 @@ palavras = {
     'dicionário': 'Uma coleção de pares chave-valor.'
 }
 
+
 def incluir_nova_palavra(palavra: str, significado: str) -> str:
     if palavra not in palavras:
         palavras[palavra] = significado
@@ -22,9 +23,11 @@ def incluir_nova_palavra(palavra: str, significado: str) -> str:
         palavras[palavra] = significado
         return "Significado atualizado!"
     
+    
 def buscar_palavra(palavra: str) -> str:
     significado = palavras.get(palavra, "Palavra inexistente!")
     return significado
+
 
 usuario_continuar = True
 
@@ -45,7 +48,3 @@ while usuario_continuar:
         print(buscar_palavra(palavra=palavra))
     else:
         usuario_continuar = False
-
-
-
-
