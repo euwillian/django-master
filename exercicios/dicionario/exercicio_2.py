@@ -36,15 +36,9 @@ def valor_produto(nome_produto: str):
     return 'Não identificado'
 
 
-for produtos in loja:
-    # irá acessar o dicionário da loja, percorrar cada produto pela chave "nome"
-    print(loja[produtos]['nome'])
-    
-   
-for produtos in loja:
-    # Irá calcular o valor total de cada produto
-    # preco x quantidade = valor total por produto
-    print('\n',loja[produtos]['nome'])
-    print(loja[produtos]['preco'] * loja[produtos]['quantidade'])
+# Iterando sobre os produtos e calculando o valor total
+for chave, produto in loja.items():
+    print(f"Nome: {produto['nome']}")
+    print(f"Valor Total: {produto['preco'] * produto['quantidade']}")
     
 print(valor_produto('Caneta'))
