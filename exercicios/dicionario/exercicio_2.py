@@ -25,18 +25,14 @@ loja = {
                  'quantidade': 150}
 }
 
+# Função para buscar o valor de um produto pelo nome
 def valor_produto(nome_produto: str):
-    for produtos in loja:
-        # Irá percorrer cada produto do dicionário e dentro de cada produto irá percorrer o nome dos dicionários
-        # Caso identifique um nome igual ao que foi enviado irá pegar o valor unitário
-        if loja[produtos]['nome'] == nome_produto:
-            valor_unitario = loja[produtos]['preco']
-            return valor_unitario
-
-    return 'Não identificado'
+    for chave, produto in loja.items():
+        if produto['nome'] == nome_produto:
+            return produto['preco']
+    return None  # Mais semântico que 'Não identificado'
 
 
-# Iterando sobre os produtos e calculando o valor total
 for chave, produto in loja.items():
     print(f"Nome: {produto['nome']}")
     print(f"Valor Total: {produto['preco'] * produto['quantidade']}")
