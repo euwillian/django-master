@@ -16,15 +16,22 @@ Permita buscar uma pessoa pelo nome e listar todas as suas informações.
 
 dicionario_de_pessoas = {}
 
-def incluir_pessoas(nome: str, idade: int, profissao: str, hobbies: list) -> str:
+def incluir_pessoas(nome: str, idade: int, profissao: str, hobbies: list) -> None:
     dicionario_de_pessoas[nome] = {'idade': idade,
                                    'profissao': profissao,
                                    'hobbies': hobbies}
-    return dicionario_de_pessoas
+    
+
+def atualizar_idade(nome: str, nova_idade: int) -> str:
+    if nome in dicionario_de_pessoas:
+        dicionario_de_pessoas[nome]['idade'] = nova_idade
+        return "Idade atualizada com sucesso"
+    return "Pessoa não encontrada"    
+
 
 
 def buscar_dados_pessoa(nome: str) -> dict:
-    return dicionario_de_pessoas[nome]
+    return dicionario_de_pessoas.get(nome, "Pessoa não encontrada")
 
 
 # Inclusão de dados via função
@@ -34,7 +41,7 @@ incluir_pessoas("Priscila", 32, 'RH', ["Atendimento", "Dançar"])
 incluir_pessoas("Claudete", 50, 'Do lar', ["Netflix", "Cozinhar"])
 
 # Atualizar exemplo
-dicionario_de_pessoas.get('Willian')['idade'] = 30
+print(atualizar_idade("Willian", 30))
 
 # Buscar uma pessoa especifica
 print(buscar_dados_pessoa('Willian'))
