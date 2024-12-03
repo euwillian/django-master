@@ -29,7 +29,6 @@ def atualizar_idade(nome: str, nova_idade: int) -> str:
     return "Pessoa não encontrada"    
 
 
-
 def buscar_dados_pessoa(nome: str) -> dict:
     return dicionario_de_pessoas.get(nome, "Pessoa não encontrada")
 
