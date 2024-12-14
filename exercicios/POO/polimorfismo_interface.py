@@ -26,7 +26,7 @@ quadrado = Quadrado(5)
 area_quadrado = quadrado.area()
 print(area_quadrado)
 
-circulo = Circulo(5)
+circulo = Circulo(4)
 area_circulo = circulo.area()
 print(area_circulo)
 
